@@ -295,5 +295,29 @@ def cv_geometrica(p, decimals = None):
         return round(r, decimals)
     return r
 
+import random
+class G5RandomGenerator():
+    
+    def __init__(self, seed=0):
+        self.__n0 = seed
+        random.seed(self.__n0)
+    
+    # gera o próximo número com base no último número gerado
+    def next(self):
+        return random.random()
+    
+    # reinicia o gerador
+    def reset(self):
+        random.seed(self.__n0)
+
+def va_exp(beta, gerador):
+    U = gerador.next()
+    return -beta * math.log(1 - U)
+
+def valor_esperado(lamb, mi):
+    p = lamb/mi
+    return ((1/mi)/(1-p))*p
+
+
 
 
