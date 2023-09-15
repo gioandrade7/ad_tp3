@@ -3,6 +3,7 @@ import pandas as pd
 import scipy.stats as st
 import matplotlib.pyplot as plt
 import seaborn as sns
+import random
 
 from functools import reduce
 
@@ -295,7 +296,6 @@ def cv_geometrica(p, decimals = None):
         return round(r, decimals)
     return r
 
-import random
 class G5RandomGenerator():
     
     def __init__(self, seed=0):
@@ -315,8 +315,8 @@ def va_exp(beta, gerador):
     return -beta * math.log(1 - U)
 
 def valor_esperado(lamb, mi):
-    p = lamb/mi
-    return ((1/mi)/(1-p))*p
+    p = lamb / mi
+    return ((1 / mi) / (1-p)) * p
 
 
 
